@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root {
+    /* Pudhu Vibrant Colors */
+    --primary-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    --accent-yellow: #f1c40f;
+    --accent-blue: #00d2ff;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --card-hover: rgba(255, 255, 255, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+/* Extremely Attractive Animated Background */
+body { 
+    background: var(--primary-gradient);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite; /* Speed konjam increase pannirukan for attractiveness */
+    color: #ffffff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass-morphism Navigation */
+nav {
+    padding: 20px; position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+}
+.nav-links { list-style: none; display: flex; justify-content: center; gap: 40px; }
+.nav-links a { 
+    text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 600; 
+    text-transform: uppercase; transition: 0.4s; letter-spacing: 1.5px;
+}
+.nav-links a:hover { color: var(--accent-yellow); transform: translateY(-3px); }
+
+/* Hero Section */
+.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
+.hero h1 { 
+    font-size: 5.5rem; font-weight: 800; margin-bottom: 10px;
+    background: linear-gradient(to bottom, #fff, #f1c40f);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+.subtitle { 
+    font-size: 1.3rem; font-weight: 300; 
+    background: rgba(255,255,255,0.2); 
+    padding: 5px 20px; border-radius: 50px;
+    display: inline-block;
+}
+
+/* Section & Cards Design */
+section { padding: 100px 10%; }
+h2 { text-align: center; margin-bottom: 50px; font-size: 2.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 40px;
+    transition: 0.5s ease;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass:hover {
+    transform: scale(1.03);
+    background: var(--card-hover);
+    border-color: #fff;
+}
+
+.glass h3 { color: var(--accent-yellow); margin-bottom: 15px; font-size: 1.6rem; }
+
+/* Project Styling */
+.project-list { max-width: 900px; margin: 0 auto; }
+.project-item { 
+    padding: 25px; border-bottom: 1px solid var(--glass-border); 
+    display: flex; justify-content: space-between; align-items: center; 
+    transition: 0.3s;
+}
+.project-item:hover { background: rgba(255,255,255,0.1); border-radius: 15px; }
+
+.badge { 
+    background: #fff;
+    padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; color: #e73c7e; font-weight: 800;
+}
+
+.github-btn { 
+    display: block; width: fit-content; margin: 40px auto 0;
+    padding: 20px 50px; border-radius: 50px; 
+    background: linear-gradient(45deg, #f1c40f, #e67e22); color: #fff; 
+    text-decoration: none; font-weight: 800; text-transform: uppercase;
+    transition: 0.4s; box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.github-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+/* Skills Tags */
+.tag { 
+    display: inline-block; background: #fff; 
+    color: #23a6d5; padding: 10px 20px; border-radius: 15px; 
+    margin: 8px; font-size: 0.9rem; font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+footer { padding: 60px; text-align: center; background: rgba(0,0,0,0.2); margin-top: 50px; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3.5rem; }
+    .nav-links { gap: 15px; font-size: 0.7rem; }
+}
